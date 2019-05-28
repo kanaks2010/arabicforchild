@@ -5,7 +5,7 @@ import 'alphabet.dart';
 void main() {
   runApp(MaterialApp(
     title: 'Bangla Quran',
-    home: ArabicForChild(),
+    home: Alphabet(),
     debugShowCheckedModeBanner: false,
   ));
 }
@@ -19,6 +19,9 @@ class ArabicForChildState extends State<ArabicForChild> {
   void initState() {
     super.initState();
   }
+
+  var bgColor = Color(0xff000000);
+  var textColor = Color(0xffffffff);
 
   @override
   Widget build(BuildContext context) {
@@ -44,6 +47,9 @@ class ArabicForChildState extends State<ArabicForChild> {
                   left: 80,
                   child: InkWell(
                       onTap: () {
+                        setState(() {
+                          this.bgColor = Color(0xFFFFFFFF);
+                        });
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -53,7 +59,7 @@ class ArabicForChildState extends State<ArabicForChild> {
                       child: Container(
                         width: MediaQuery.of(context).size.width * 0.6,
                         padding: EdgeInsets.all(10),
-                        color: Colors.black,
+                        color: bgColor,
                         child: Text(
                           "Arabic Alphabet",
                           style: TextStyle(
@@ -71,7 +77,7 @@ class ArabicForChildState extends State<ArabicForChild> {
                       child: Container(
                         width: MediaQuery.of(context).size.width * 0.6,
                         padding: EdgeInsets.all(10),
-                        color: Colors.black,
+                        color: bgColor,
                         child: Text("Vocalization",
                             style: TextStyle(
                                 color: Colors.pink,
@@ -87,7 +93,7 @@ class ArabicForChildState extends State<ArabicForChild> {
                       child: Container(
                         width: MediaQuery.of(context).size.width * 0.6,
                         padding: EdgeInsets.all(10),
-                        color: Colors.black,
+                        color: bgColor,
                         child: Text("Shaps of letters",
                             style: TextStyle(
                                 color: Colors.pink,
